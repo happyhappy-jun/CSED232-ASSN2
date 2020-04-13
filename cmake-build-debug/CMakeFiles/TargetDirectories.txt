@@ -1,0 +1,3 @@
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir

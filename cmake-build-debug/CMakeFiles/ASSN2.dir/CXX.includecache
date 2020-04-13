@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/database.cpp
+iostream
+-
+database.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/database.h
+
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/database.h
+string
+-
+list
+-
+iostream
+-
+
