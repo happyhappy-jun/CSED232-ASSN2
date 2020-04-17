@@ -1,63 +1,18 @@
 #include <iostream>
-#include "database.h"
+#include <utility>
+#include "headers/database.h"
 
-Member create_member(const std::string ID, const std::string name, const std::string birthday,
-                     const std::string passward) {
-    return Member(ID, name, birthday, passward);
+void add_member(Database &db, const Member &m) {
+    db.refMemberDB().push_back(m);
 }
 
-void add_member(Database &db, Member m) {
-    db.member_db.push_back(m);
-}
-
-Member::Member(const std::string ID, const std::string name, const std::string birthday, const std::string passward)
-        : ID(ID), name(name), birthday(birthday), passward(passward) {
-}
-
-template<>
-void List<Member>::push_back(Member data) {
-    Node<Member> *current;
-    Node<Member> *temp = new Node<Member>(data);
-    temp->setNext(NULL);
-    if (head == NULL) {
-        head = temp;
-        tail = head;
-        size++;
-    } else if (head->content().getID().compare(temp->content().getID()) > 0) {
-        temp->setNext(head);
-        tail = temp;
-        head = temp;
-        size++;
-    } else {
-        current = head;
-        while (current->getNext() != NULL &&
-               current->getNext()->content().getID().compare(temp->content().getID()) < 0) {
-            current = current->getNext();
-        }
-        temp->setNext(current->getNext());
-        current->setNext(temp);
-        size++;
-    }
-}
-
-
-void Member::addFriend(List<Member> member_db, std::string name) {
-    Member target = searchUser(member_db, name);
-    if (target.name == name){
-        std::cout << "Successfully added a friend" << std::endl;
-        friend_list.push_back(target);}
-    else {
-        std::cout << "User not found" << std::endl;
-    }
-
-}
-
-Member Member::searchUser(List<Member> member_db, std::string name) {
-    Node<Member> *temp = member_db.begin();
-    while (temp != NULL) {
-        if (temp->content().getName() == name) return temp->content();
+bool isFriend(List<Member> l, const std::string& name) {
+    Node<Member> *temp = l.begin();
+    while (temp != nullptr) {
+        if (temp->content().getName() == name) return true;
         temp = temp->getNext();
     }
+    return false;
 }
 
 Member sign_in() {
@@ -65,7 +20,8 @@ Member sign_in() {
     std::cout << "ID: ";
     std::cin >> ID;
     std::cout << "Name: ";
-    std::cin >> name;
+    std::cin.ignore();
+    std::getline(std::cin, name);
     std::cout << "Birthday: ";
     std::cin >> birthday;
     std::cout << "Password: ";
@@ -81,21 +37,74 @@ bool log_in(Database &db) {
     std::cin >> ID;
     std::cout << "Password: ";
     std::cin >> password;
-    if (db.verify(ID, password)) {
-        return true;
-    } else {
-        return false;
-    }
+    return db.verify(ID, password);
 }
 
 void sign_out(Database &db) {
-    db.status = false;
+    db.setStatus(false);
 }
 
 void print_db(List<Member> member_db) {
     Node<Member> *current = member_db.begin();
-    while(current!= NULL){
+    while (current != nullptr) {
         std::cout << "@" << current->content().getID() << std::endl;
         current = current->getNext();
     }
 }
+
+bool isExist(List<Member> l, const std::string& name) {
+    Node<Member> *temp = l.begin();
+    while (temp != nullptr) {
+        if (temp->content().getName() == name) return true;
+        temp = temp->getNext();
+    }
+    return false;
+}
+
+void addFriend(Member &m, const List<Member>& member_db, const std::string& name) {
+    Member target = Member::searchUser(member_db, name);
+    if (target.getName() == name) {
+        std::cout << "Successfully added a friend" << std::endl;
+        m.refFriendList().push_back(target);
+    } else {
+        std::cout << "User not found" << std::endl;
+    }
+
+}
+
+void removeFriend(Member &m, const List<Member>& member_db, const std::string& name) {
+    Node<Member> *target = m.getFriendList().search(name);
+    if (target != nullptr) {
+        m.refFriendList().removeNode(target);
+        std::cout << "Successfully removed a  friend" << std::endl;
+    } else {
+        std::cout << "User not found" << std::endl;
+    }
+}
+
+void Database::deletePost() {
+    Node<Post> *cur = post_db.begin();
+    while (cur != nullptr) {
+        if (cur->content().getOwner().getName() == currentUser.getName()) {
+            post_db.removeNode(cur);
+        }
+        cur->ref_content().deleteComment(currentUser);
+        cur = cur->next;
+    }
+}
+
+void Database::deleteFriendList() {
+    Node<Member> *cur = member_db.begin();
+    while (cur != nullptr) {
+        if (cur->content().getName()==currentUser.getName())
+            member_db.removeNode(cur);
+        Node<Member> *friend_cur = cur->content().getFriendList().begin();
+        while (friend_cur != nullptr) {
+            if (friend_cur->content().getName() == currentUser.getName())
+                cur->ref_content().refFriendList().removeNode(friend_cur);
+            friend_cur = friend_cur->next;
+        }
+        cur = cur->next;
+    }
+}
+

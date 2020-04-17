@@ -96,11 +96,53 @@ CMakeFiles/ASSN2.dir/menu.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ASSN2.dir/menu.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/unajun/Documents/Sophomore/CSED232/ASSN2/menu.cpp -o CMakeFiles/ASSN2.dir/menu.cpp.s
 
+CMakeFiles/ASSN2.dir/post.cpp.o: CMakeFiles/ASSN2.dir/flags.make
+CMakeFiles/ASSN2.dir/post.cpp.o: ../post.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ASSN2.dir/post.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ASSN2.dir/post.cpp.o -c /Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp
+
+CMakeFiles/ASSN2.dir/post.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ASSN2.dir/post.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp > CMakeFiles/ASSN2.dir/post.cpp.i
+
+CMakeFiles/ASSN2.dir/post.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ASSN2.dir/post.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp -o CMakeFiles/ASSN2.dir/post.cpp.s
+
+CMakeFiles/ASSN2.dir/member.cpp.o: CMakeFiles/ASSN2.dir/flags.make
+CMakeFiles/ASSN2.dir/member.cpp.o: ../member.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ASSN2.dir/member.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ASSN2.dir/member.cpp.o -c /Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp
+
+CMakeFiles/ASSN2.dir/member.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ASSN2.dir/member.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp > CMakeFiles/ASSN2.dir/member.cpp.i
+
+CMakeFiles/ASSN2.dir/member.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ASSN2.dir/member.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp -o CMakeFiles/ASSN2.dir/member.cpp.s
+
+CMakeFiles/ASSN2.dir/list.cpp.o: CMakeFiles/ASSN2.dir/flags.make
+CMakeFiles/ASSN2.dir/list.cpp.o: ../list.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ASSN2.dir/list.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ASSN2.dir/list.cpp.o -c /Users/unajun/Documents/Sophomore/CSED232/ASSN2/list.cpp
+
+CMakeFiles/ASSN2.dir/list.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ASSN2.dir/list.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/unajun/Documents/Sophomore/CSED232/ASSN2/list.cpp > CMakeFiles/ASSN2.dir/list.cpp.i
+
+CMakeFiles/ASSN2.dir/list.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ASSN2.dir/list.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/unajun/Documents/Sophomore/CSED232/ASSN2/list.cpp -o CMakeFiles/ASSN2.dir/list.cpp.s
+
 # Object files for target ASSN2
 ASSN2_OBJECTS = \
 "CMakeFiles/ASSN2.dir/main.cpp.o" \
 "CMakeFiles/ASSN2.dir/database.cpp.o" \
-"CMakeFiles/ASSN2.dir/menu.cpp.o"
+"CMakeFiles/ASSN2.dir/menu.cpp.o" \
+"CMakeFiles/ASSN2.dir/post.cpp.o" \
+"CMakeFiles/ASSN2.dir/member.cpp.o" \
+"CMakeFiles/ASSN2.dir/list.cpp.o"
 
 # External object files for target ASSN2
 ASSN2_EXTERNAL_OBJECTS =
@@ -108,9 +150,12 @@ ASSN2_EXTERNAL_OBJECTS =
 ASSN2: CMakeFiles/ASSN2.dir/main.cpp.o
 ASSN2: CMakeFiles/ASSN2.dir/database.cpp.o
 ASSN2: CMakeFiles/ASSN2.dir/menu.cpp.o
+ASSN2: CMakeFiles/ASSN2.dir/post.cpp.o
+ASSN2: CMakeFiles/ASSN2.dir/member.cpp.o
+ASSN2: CMakeFiles/ASSN2.dir/list.cpp.o
 ASSN2: CMakeFiles/ASSN2.dir/build.make
 ASSN2: CMakeFiles/ASSN2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ASSN2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ASSN2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ASSN2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

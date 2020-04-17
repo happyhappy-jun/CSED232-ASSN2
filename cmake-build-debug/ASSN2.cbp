@@ -85,16 +85,31 @@
 		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/database.cpp">
 			<Option target="ASSN2"/>
 		</Unit>
-		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/database.h">
+		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h">
+			<Option target="ASSN2"/>
+		</Unit>
+		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h">
+			<Option target="ASSN2"/>
+		</Unit>
+		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/menu.h">
+			<Option target="ASSN2"/>
+		</Unit>
+		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h">
+			<Option target="ASSN2"/>
+		</Unit>
+		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/list.cpp">
 			<Option target="ASSN2"/>
 		</Unit>
 		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/main.cpp">
 			<Option target="ASSN2"/>
 		</Unit>
+		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp">
+			<Option target="ASSN2"/>
+		</Unit>
 		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/menu.cpp">
 			<Option target="ASSN2"/>
 		</Unit>
-		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/menu.h">
+		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp">
 			<Option target="ASSN2"/>
 		</Unit>
 		<Unit filename="/Users/unajun/Documents/Sophomore/CSED232/ASSN2/CMakeLists.txt">

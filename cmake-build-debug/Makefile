@@ -150,6 +150,33 @@ database.cpp.s:
 	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/database.cpp.s
 .PHONY : database.cpp.s
 
+list.o: list.cpp.o
+
+.PHONY : list.o
+
+# target to build an object file
+list.cpp.o:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/list.cpp.o
+.PHONY : list.cpp.o
+
+list.i: list.cpp.i
+
+.PHONY : list.i
+
+# target to preprocess a source file
+list.cpp.i:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/list.cpp.i
+.PHONY : list.cpp.i
+
+list.s: list.cpp.s
+
+.PHONY : list.s
+
+# target to generate assembly for a file
+list.cpp.s:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/list.cpp.s
+.PHONY : list.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -176,6 +203,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+member.o: member.cpp.o
+
+.PHONY : member.o
+
+# target to build an object file
+member.cpp.o:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/member.cpp.o
+.PHONY : member.cpp.o
+
+member.i: member.cpp.i
+
+.PHONY : member.i
+
+# target to preprocess a source file
+member.cpp.i:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/member.cpp.i
+.PHONY : member.cpp.i
+
+member.s: member.cpp.s
+
+.PHONY : member.s
+
+# target to generate assembly for a file
+member.cpp.s:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/member.cpp.s
+.PHONY : member.cpp.s
 
 menu.o: menu.cpp.o
 
@@ -204,6 +258,33 @@ menu.cpp.s:
 	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/menu.cpp.s
 .PHONY : menu.cpp.s
 
+post.o: post.cpp.o
+
+.PHONY : post.o
+
+# target to build an object file
+post.cpp.o:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/post.cpp.o
+.PHONY : post.cpp.o
+
+post.i: post.cpp.i
+
+.PHONY : post.i
+
+# target to preprocess a source file
+post.cpp.i:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/post.cpp.i
+.PHONY : post.cpp.i
+
+post.s: post.cpp.s
+
+.PHONY : post.s
+
+# target to generate assembly for a file
+post.cpp.s:
+	$(MAKE) -f CMakeFiles/ASSN2.dir/build.make CMakeFiles/ASSN2.dir/post.cpp.s
+.PHONY : post.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,12 +297,21 @@ help:
 	@echo "... database.o"
 	@echo "... database.i"
 	@echo "... database.s"
+	@echo "... list.o"
+	@echo "... list.i"
+	@echo "... list.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... member.o"
+	@echo "... member.i"
+	@echo "... member.s"
 	@echo "... menu.o"
 	@echo "... menu.i"
 	@echo "... menu.s"
+	@echo "... post.o"
+	@echo "... post.i"
+	@echo "... post.s"
 .PHONY : help
 
 
