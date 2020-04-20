@@ -6,7 +6,7 @@
 #define ASSN2_MEMBER_H
 
 #include <iostream>
-#include "headers/list.h"
+#include "list.h"
 
 class Member {
 private:

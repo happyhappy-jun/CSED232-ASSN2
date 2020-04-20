@@ -9,8 +9,8 @@
 #include <ctime>
 #include <utility>
 #include <fstream>
-#include "headers/member.h"
-#include "headers/list.h"
+#include "member.h"
+#include "list.h"
 
 
 class Comment {
@@ -73,13 +73,18 @@ public:
     void printTime(){
         std::cout << timer << std::endl;
     }
+    void deletePostContent(){
+        commentList.deleteList();
+        likeList.deleteList();
+    }
+    void deleteComment(Member &m);
     void printPost();
 
     void printComment();
 
     void writeComment(Member &m, std::string &c);
 
-    void deleteComment(Member &m);
+
 };
 
 template<>

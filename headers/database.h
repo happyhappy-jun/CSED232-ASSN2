@@ -134,6 +134,15 @@ public:
     Member &refcurrentID() {
         return member_db.search(currentUser.getID())->ref_content();
     }
+
+    void clear(){
+        member_db.deleteList();
+        Node<Post> *temp = post_db.begin();
+        while(temp != nullptr) {
+            temp->content().deletePostContent();
+            temp = temp->next;
+        }
+    }
 };
 
 

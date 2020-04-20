@@ -129,7 +129,8 @@ void printMyPostWrapper(Database &db) {
     bool modeStatus = db.getModeStatus();
     bool printed = db.printMyPost();
     if (printed) {
-        int idx, cnt = -1;
+        int idx = 0;
+        int cnt = -1;
         std::string s, content;
         //Select index of Post
         std::cout << "Select Number: ";
@@ -170,7 +171,8 @@ void printMyPostWrapper(Database &db) {
 
 void writeCommentWrapper(Database &db) {
     bool modeStatus = db.getModeStatus();
-    int idx, cnt = -1;
+    int idx = 0;
+    int cnt = -1;
     std::string s, content;
     //Select index of Post
     std::cout << "Select Number: ";
@@ -210,10 +212,10 @@ void removeAccountWrapper(Database &db) {
 
 void loadCommandWrapper(Database &db) {
     std::cout << "[-]Swithcing to Command Mode..." << std::endl;
-
-    if (std::fopen("/Users/unajun/Documents/Sophomore/CSED232/ASSN2/command.txt", "r")) {
+// /Users/unajun/Documents/Sophomore/CSED232/ASSN2/command.txt"
+    if (std::fopen("command.txt", "r")) {
         db.startCommandMode();
-        db.setBuffer("/Users/unajun/Documents/Sophomore/CSED232/ASSN2/command.txt");
+        db.setBuffer("command.txt");
     } else {
         std::cout << "[x]command.txt doesn't exit!" << std::endl;
     }
@@ -230,7 +232,8 @@ void finishCommandMode(Database &db) {
 
 
 void exitProgram(Database &db) {
-    std::ofstream logfile("/Users/unajun/Documents/Sophomore/CSED232/ASSN2/command.txt");
+    db.clear();
+    std::ofstream logfile("command.txt");
     logfile << db.getLog();
     logfile.close();
 

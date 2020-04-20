@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../headers/list.h
-iostream
--
-
-../headers/member.h
-iostream
--
-headers/list.h
-../headers/headers/list.h
-
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
 string
 -
@@ -37,8 +27,22 @@ iostream
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
 iostream
 -
-headers/list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/headers/list.h
+list.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/menu.h
+string
+-
+string
+-
+list
+-
+iostream
+-
+utility
+-
+database.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
 
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
 ctime
@@ -47,14 +51,22 @@ utility
 -
 fstream
 -
-headers/member.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/headers/member.h
-headers/list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/headers/list.h
+member.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
+list.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp
-headers/post.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/menu.cpp
+string
+-
+fstream
+-
+iostream
+-
+headers/list.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+headers/menu.h
+/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/menu.h
 headers/database.h
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
 

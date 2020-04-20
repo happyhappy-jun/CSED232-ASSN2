@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="Remote Host (71eb673e-5dd9-4246-8e91-487e4d2cee3c)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/happyhappy/CSED/232" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

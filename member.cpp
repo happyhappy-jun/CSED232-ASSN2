@@ -42,4 +42,5 @@ Member Member::searchID(List<Member> member_db, const std::string& ID) {
         if (temp->content().getID() == ID) return temp->content();
         temp = temp->next;
     }
+    return temp->content();
 }
