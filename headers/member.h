@@ -52,7 +52,9 @@ public:
     void printUser() {
         std::cout << "@" << ID << " - " << name << " " << birthday << std::endl;
     }
-
+    void deleteFriendlist(){
+        friend_list.deleteList();
+    }
     static Member searchID(List<Member> member_db, const std::string& ID);
 };
 

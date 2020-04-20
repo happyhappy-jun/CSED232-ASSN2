@@ -136,11 +136,15 @@ public:
     }
 
     void clear(){
+        Node<Member> *temp1 = member_db.begin();
+        while (temp1!=nullptr){
+            temp1->content().deleteFriendlist();
+        }
         member_db.deleteList();
-        Node<Post> *temp = post_db.begin();
-        while(temp != nullptr) {
-            temp->content().deletePostContent();
-            temp = temp->next;
+        Node<Post> *temp2 = post_db.begin();
+        while(temp2 != nullptr) {
+            temp2->content().deletePostContent();
+            temp2 = temp2->next;
         }
     }
 };
