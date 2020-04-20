@@ -7,10 +7,10 @@
 #include <headers/member.h>
 
 template <>
-Node<Member> * List<Member>::search(const std::string &name){
+Node<Member> * List<Member>::search(const std::string &ID){
     Node<Member> *temp = head;
     while(temp != nullptr){
-        if(temp->content().getName()==name) return temp;
+        if(temp->content().getID() == ID) return temp;
         temp  = temp ->next;
     }
     return nullptr;

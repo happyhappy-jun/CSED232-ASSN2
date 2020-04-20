@@ -23,13 +23,10 @@ CMakeFiles/ASSN2.dir/main.cpp.o
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/main.cpp
 CMakeFiles/ASSN2.dir/member.cpp.o
- /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
- /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp
 CMakeFiles/ASSN2.dir/menu.cpp.o
- ../headers/list.h
  ../headers/member.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
@@ -40,5 +37,8 @@ CMakeFiles/ASSN2.dir/menu.cpp.o
 CMakeFiles/ASSN2.dir/post.cpp.o
  ../headers/list.h
  ../headers/member.h
+ /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
+ /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+ /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
  /Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp

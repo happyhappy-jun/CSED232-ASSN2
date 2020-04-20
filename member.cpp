@@ -3,7 +3,6 @@
 //
 #include "headers/member.h"
 #include "headers/list.h"
-#include "headers/database.h"
 
 #include <iostream>
 
@@ -37,10 +36,10 @@ void List<Member>::push_back(const Member &data) {
 }
 
 
-Member Member::searchUser(List<Member> member_db, const std::string& name) {
+Member Member::searchID(List<Member> member_db, const std::string& ID) {
     Node<Member> *temp = member_db.begin();
     while (temp != nullptr) {
-        if (temp->content().getName() == name) return temp->content();
+        if (temp->content().getID() == ID) return temp->content();
         temp = temp->next;
     }
 }

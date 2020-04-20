@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "headers/menu.h"
 #include "headers/database.h"
 
@@ -25,9 +26,11 @@ int main() {
     Database mainDatabase;
     menuStack directory;
     directory.push(&mainMenu);
-
+    int item;
     while (!directory.isEmpty()) {
         menu *current = directory.top();
+        if(mainDatabase.getModeStatus() && mainDatabase.filebuf.eof())
+            finishCommandMode(mainDatabase);
         std::cout << "==================================" << std::endl;
         std::cout << "          **  " << current->getName() << "  **  " << std::endl;
         std::cout << "==================================" << std::endl;
@@ -35,12 +38,15 @@ int main() {
         for (int idx = 0; idx < 4; idx++) {
             std::cout << idx + 1 << ". " << current->getChild(idx)->getName() << std::endl;
         }
-        std::string input;
-        std::cout << "\n* Select Menu: ";
-        std::cin >> input;
-        std::cin.clear();
 
-        int item = std::stoi(input);
+        std::string input;
+
+        std::cout << "\n* Select Menu: ";
+        std::getline(mainDatabase.getModeStatus() ? mainDatabase.filebuf : std::cin, input);
+        mainDatabase.addLog(input);
+        std::cout <<input <<std::endl;
+        item = std::stoi(input);
+        if(!(item>=1 && item <=4)) continue;
         if (item == -1) directory.pop();
         else function_handler(mainDatabase, directory, current->getChild(item - 1));
         std::cout << std::endl;

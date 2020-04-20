@@ -53,15 +53,15 @@ public:
         std::cout << "@" << ID << " - " << name << " " << birthday << std::endl;
     }
 
-    static Member searchUser(List<Member> member_db, const std::string& name);
+    static Member searchID(List<Member> member_db, const std::string& ID);
 };
 
 template<>
 void List<Member>::push_back(const Member &data);
 
-bool isFriend(List<Member> l, const std::string& name);
+bool isFriend(List<Member> l, const std::string& ID);
 
-bool isExist(List<Member> l, const std::string& name);
+bool isExist(List<Member> l, const std::string& ID);
 
 void print_db(List<Member> member_db);
 

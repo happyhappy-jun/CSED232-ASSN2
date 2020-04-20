@@ -96,6 +96,7 @@ public:
         if (head == target) {
             head = target->next;
             delete target;
+            size--;
             return;
         }
         while (temp != target) {
@@ -106,12 +107,14 @@ public:
         if(prev!=nullptr) {
             prev->next = temp->next;
             delete target;
+            size--;
+            return;
         }
     }
 
     Node<T> *search() {};
 
-    Node<T> *search(const std::string &name);
+    Node<T> *search(const std::string &ID);
 
     Node<T> *at(int idx) {
         int cnt = 0;

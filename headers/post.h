@@ -8,8 +8,10 @@
 
 #include <ctime>
 #include <utility>
+#include <fstream>
 #include "headers/member.h"
 #include "headers/list.h"
+
 
 class Comment {
 private:
@@ -64,8 +66,13 @@ public:
         return content;
     }
 
-    void likePost(Member &m);
-
+    List<std::string>& refLikelist(){
+        List<std::string>& a = likeList;
+        return a;
+    }
+    void printTime(){
+        std::cout << timer << std::endl;
+    }
     void printPost();
 
     void printComment();

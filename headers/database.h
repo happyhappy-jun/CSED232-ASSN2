@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "member.h"
 #include "post.h"
 #include "list.h"
@@ -13,9 +14,12 @@ private:
     List<Member> member_db;
     List<Post> post_db;
     bool status = false;
+    bool commandMode = false;
     Member currentUser;
+    std::string log;
+    int commandNum;
 public:
-
+    std::ifstream filebuf;
     Database() = default;
 
     ~Database() {
@@ -31,7 +35,18 @@ public:
     Member getCurrentUser() {
         return currentUser;
     }
-
+    void addLog(std::string s){
+        log += s +'\n';
+    }
+    std::string getLog(){
+        return log;
+    }
+    void setCommandNum(int x){
+        commandNum = x;
+    }
+    int getCommandNum(){
+        return commandNum;
+    }
     List<Member> getMemberDB() {
         return member_db;
     }
@@ -48,11 +63,24 @@ public:
         List<Member> &temp = member_db;
         return temp;
     }
-
+    void setBuffer(std::string s){
+        filebuf.open(s);
+    }
+//    std::ifstream getBuffer(){
+//        return filebuf;
+//    }
     bool currentStatus() {
         return status;
     }
-
+    void startCommandMode(){
+        commandMode = true;
+    }
+    void stopCommandMode(){
+        commandMode = false;
+    }
+    bool getModeStatus(){
+        return commandMode;
+    }
     bool verify(const std::string& ID, const std::string& password) {
         for (int idx = 0; idx < member_db.len(); idx++) {
             Member &temp = member_db.at(idx)->ref_content();
@@ -78,6 +106,7 @@ public:
                 cnt++;
                 std::cout << cnt << ": ";
                 current->content().printPost();
+                current->content().printTime();
             }
             current = current->next;
         }
@@ -88,7 +117,7 @@ public:
         int cnt = -1;
         Node<Post> *current = post_db.begin();
         while (current != nullptr) {
-            if (isFriend(refcurrentUser().getFriendList(), current->content().getOwner().getName())) {
+            if (isFriend(refcurrentID().getFriendList(), current->content().getOwner().getID())) {
                 cnt++;
                 std::cout << cnt << ": ";
                 current->content().printPost();
@@ -102,8 +131,8 @@ public:
 
     void deleteFriendList();
 
-    Member &refcurrentUser() {
-        return member_db.search(currentUser.getName())->ref_content();
+    Member &refcurrentID() {
+        return member_db.search(currentUser.getID())->ref_content();
     }
 };
 
@@ -114,13 +143,13 @@ void add_member(Database &db, const Member &m);
 
 bool log_in(Database &db);
 
-Member sign_in();
+Member sign_in(Database &db);
 
 void sign_out(Database &db);
 
-void addFriend(Member &m, const List<Member>& member_db, const std::string& name);
+void addFriend(Member &m, const List<Member>& member_db, const std::string& ID);
 
 void removeFriend(Member &m, const List<Member>& member_db, const std::string& name);
 
-
+void likePost(Post& p, Member &m, Database &db);
 #endif

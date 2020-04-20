@@ -1,5 +1,7 @@
 #include <string>
-#include <list>
+#include <fstream>
+#include <iostream>
+#include "headers/list.h"
 #include "headers/menu.h"
 #include "headers/database.h"
 
@@ -9,12 +11,12 @@ int function_handler(Database &mainDatabase, menuStack &s, menu *menuItem) {
         s.push(menuItem);
         //return 0;
     }
-    if (id == 224 or id == 214 or id == 4) {
+    if (id == 224 or id == 214) {
         s.pop();
         return 0;
     }
     if (id == 1) {
-        add_member(mainDatabase, sign_in());
+        add_member(mainDatabase, sign_in(mainDatabase));
         return 0;
     }
     if (id == 2) {
@@ -47,10 +49,10 @@ int function_handler(Database &mainDatabase, menuStack &s, menu *menuItem) {
         return 0;
     }
     if (id == 213) {
-        if (mainDatabase.refcurrentUser().getFriendList().begin() == nullptr)
+        if (mainDatabase.refcurrentID().getFriendList().begin() == nullptr)
             std::cout << "Oops, You don't have friends... Try hard!" << std::endl;
         else
-            print_db(mainDatabase.refcurrentUser().getFriendList());
+            print_db(mainDatabase.refcurrentID().getFriendList());
     }
 
     if (id == 221)
@@ -65,38 +67,53 @@ int function_handler(Database &mainDatabase, menuStack &s, menu *menuItem) {
         s.top()->changeName("Sign in");
         s.pop();
     }
+    if (id == 3) {
+        loadCommandWrapper(mainDatabase);
+        return 0;
+    }
+    if (id == 4) {
+        exitProgram(mainDatabase);
+        s.pop();
+        return 0;
+    }
 
     return 0;
 }
 
 void addFriendWrapper(Database &db) {
+    bool modeStatus = db.getModeStatus();
     std::cout << "Input friend name: ";
-    std::string friendName;
-    std::cin >> friendName;
-    if (isExist(db.getMemberDB(), friendName) && !isFriend(db.refcurrentUser().getFriendList(), friendName))
-        addFriend(db.refcurrentUser(), db.getMemberDB(), friendName);
+    std::string friendID;
+    std::getline(modeStatus ? db.filebuf : std::cin, friendID);
+    db.addLog(friendID);
+    if (isExist(db.getMemberDB(), friendID) && !isFriend(db.refcurrentID().getFriendList(), friendID))
+        addFriend(db.refcurrentID(), db.getMemberDB(), friendID);
     else
         std::cout << "Invalid Friend!" << std::endl;
 }
 
 void removeFriendWrapper(Database &db) {
+    bool modeStatus = db.getModeStatus();
     std::cout << "Input friend name: ";
     std::string friendName;
-    std::cin >> friendName;
-    if (isExist(db.getMemberDB(), friendName) && isFriend(db.refcurrentUser().getFriendList(), friendName))
-        removeFriend(db.refcurrentUser(), db.getMemberDB(), friendName);
+    std::getline(modeStatus ? db.filebuf : std::cin, friendName);
+    db.addLog(friendName);
+    if (isExist(db.getMemberDB(), friendName) && isFriend(db.refcurrentID().getFriendList(), friendName))
+        removeFriend(db.refcurrentID(), db.getMemberDB(), friendName);
     else
         std::cout << "Invalid Friend!" << std::endl;
 }
 
 
 void addPostWrapper(Database &db) {
+    bool modeStatus = db.getModeStatus();
     std::cout << "Write Post! \nPost: ";
     std::string content;
-    std::cin.ignore();
-    std::getline(std::cin, content);
+    //(modeStatus ? db.filebuf : std::cin).ignore();
+    std::getline(modeStatus ? db.filebuf : std::cin, content);
+    db.addLog(content);
     if (content.length() != 0)
-        db.refPostDB().push_back(Post(db.refcurrentUser(), content));
+        db.refPostDB().push_back(Post(db.refcurrentID(), content));
 }
 
 void printFriendPostWrapper(Database &db) {
@@ -109,19 +126,24 @@ void printFriendPostWrapper(Database &db) {
 }
 
 void printMyPostWrapper(Database &db) {
+    bool modeStatus = db.getModeStatus();
     bool printed = db.printMyPost();
     if (printed) {
         int idx, cnt = -1;
         std::string s, content;
         //Select index of Post
         std::cout << "Select Number: ";
-        std::cin >> idx;
+        std::string line;
+        std::getline(modeStatus ? db.filebuf : std::cin, line);
+        db.addLog(line);
+        if (line.length())
+            idx = std::stoi(line);
         if (idx == -1)
             return;
         //Get selected post
         Node<Post> *current = db.refPostDB().begin();
         while (current != nullptr) {
-            if (db.getCurrentUser().getName() == current->content().getOwner().getName()) {
+            if (db.getCurrentUser().getID() == current->content().getOwner().getID()) {
                 cnt++;
             }
             if (cnt == idx) break;
@@ -131,11 +153,15 @@ void printMyPostWrapper(Database &db) {
             //print post and comment
             current->content().printPost();
             current->content().printComment();
-            std::cout << "Enter -1 to exit: ";
-            std::cin >> idx;
-            if (idx == -1)
-                return;
+            std::cout << "Enter -1 to exit: " << std::endl;
+//            std::string line2;
+            int i;
+            (modeStatus ? db.filebuf : std::cin) >> i;
+            (modeStatus ? db.filebuf : std::cin).ignore();
+            db.addLog(std::to_string(i));
+            if (i == -1) return;
         }
+
     } else {
         std::cout << "Nothing to Print" << std::endl;
     }
@@ -143,17 +169,18 @@ void printMyPostWrapper(Database &db) {
 
 
 void writeCommentWrapper(Database &db) {
+    bool modeStatus = db.getModeStatus();
     int idx, cnt = -1;
     std::string s, content;
     //Select index of Post
     std::cout << "Select Number: ";
-    std::cin >> idx;
+    modeStatus ? db.filebuf : std::cin >> idx;
     if (idx == -1)
         return;
     //Get selected post
     Node<Post> *current = db.refPostDB().begin();
     while (current != nullptr) {
-        if (isFriend(db.refcurrentUser().getFriendList(), current->content().getOwner().getName())) {
+        if (isFriend(db.refcurrentID().getFriendList(), current->content().getOwner().getID())) {
             cnt++;
         }
         if (cnt == idx) break;
@@ -163,19 +190,49 @@ void writeCommentWrapper(Database &db) {
     if (current != nullptr) {
         current->content().printPost();
         current->content().printComment();
-        current->ref_content().likePost(db.refcurrentUser());
+        likePost(current->ref_content(), db.refcurrentID(), db);
         std::cout << "Reply: " << std::endl;
-        std::cin.ignore();
-        std::getline(std::cin, content);
+        (modeStatus ? db.filebuf : std::cin).ignore();
+        std::getline(modeStatus ? db.filebuf : std::cin, content);
+        db.addLog(content);
         if (content.length() != 0)
-            current->ref_content().writeComment(db.refcurrentUser(), content);
+            current->ref_content().writeComment(db.refcurrentID(), content);
     } else {
         std::cout << "Nothing to Print" << std::endl;
     }
 }
 
 void removeAccountWrapper(Database &db) {
-    std::cout << "Deleting Account..." << std::endl;
+    std::cout << "[-]Deleting Account..." << std::endl;
     db.deletePost();
     db.deleteFriendList();
 }
+
+void loadCommandWrapper(Database &db) {
+    std::cout << "[-]Swithcing to Command Mode..." << std::endl;
+
+    if (std::fopen("/Users/unajun/Documents/Sophomore/CSED232/ASSN2/command.txt", "r")) {
+        db.startCommandMode();
+        db.setBuffer("/Users/unajun/Documents/Sophomore/CSED232/ASSN2/command.txt");
+    } else {
+        std::cout << "[x]command.txt doesn't exit!" << std::endl;
+    }
+
+}
+
+
+void finishCommandMode(Database &db) {
+    db.stopCommandMode();
+    std::cout << "Returning to Stdin!" << std::endl;
+    std::cin.clear();
+    std::cin.sync();
+}
+
+
+void exitProgram(Database &db) {
+    std::ofstream logfile("/Users/unajun/Documents/Sophomore/CSED232/ASSN2/command.txt");
+    logfile << db.getLog();
+    logfile.close();
+
+}
+

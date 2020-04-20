@@ -69,10 +69,6 @@ public:
     menu(std::string name) : name(std::move(name)) {}
 
     ~menu() {
-        for (int i = 0; i < 4; i++) {
-            if (children.at(i) != nullptr)
-                delete children.at(i);
-        }
     }
 
     menu subMenu(const std::string &name, int id) {
@@ -121,4 +117,9 @@ void writeCommentWrapper(Database &db);
 
 void removeAccountWrapper(Database &db);
 
+void loadCommandWrapper(Database &db);
+
+void finishCommandMode(Database &db);
+
+void exitProgram(Database &db);
 #endif
