@@ -48,7 +48,6 @@ public:
         List<Member> &l = friend_list;
         return l;
     }
-
     void printUser() {
         std::cout << "@" << ID << " - " << name << " " << birthday << std::endl;
     }

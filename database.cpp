@@ -5,7 +5,7 @@ void add_member(Database &db, const Member &m) {
     db.refMemberDB().push_back(m);
 }
 
-bool isFriend(List<Member> l, const std::string& ID) {
+bool isFriend(List<Member> l, const std::string &ID) {
     Node<Member> *temp = l.begin();
     while (temp != nullptr) {
         if (temp->content().getID() == ID) return true;
@@ -58,7 +58,7 @@ void print_db(List<Member> member_db) {
     }
 }
 
-bool isExist(List<Member> l, const std::string& ID) {
+bool isExist(List<Member> l, const std::string &ID) {
     Node<Member> *temp = l.begin();
     while (temp != nullptr) {
         if (temp->content().getID() == ID) return true;
@@ -67,7 +67,7 @@ bool isExist(List<Member> l, const std::string& ID) {
     return false;
 }
 
-void addFriend(Member &m, const List<Member>& member_db, const std::string& ID) {
+void addFriend(Member &m, const List<Member> &member_db, const std::string &ID) {
     Member target = Member::searchID(member_db, ID);
     if (target.getID() == ID) {
         std::cout << "Successfully added a friend" << std::endl;
@@ -78,7 +78,7 @@ void addFriend(Member &m, const List<Member>& member_db, const std::string& ID) 
 
 }
 
-void removeFriend(Member &m, const List<Member>& member_db, const std::string& name) {
+void removeFriend(Member &m, const List<Member> &member_db, const std::string &name) {
     Node<Member> *target = m.getFriendList().search(name);
     if (target != nullptr) {
         m.refFriendList().removeNode(target);
@@ -102,25 +102,25 @@ void Database::deletePost() {
 void Database::deleteFriendList() {
     Node<Member> *cur = member_db.begin();
     while (cur != nullptr) {
-        if (cur->content().getID()==currentUser.getID())
-            member_db.removeNode(cur);
         Node<Member> *friend_cur = cur->content().getFriendList().begin();
         while (friend_cur != nullptr) {
             if (friend_cur->content().getID() == currentUser.getID())
                 cur->ref_content().refFriendList().removeNode(friend_cur);
             friend_cur = friend_cur->next;
         }
+        if (cur->content().getID() == currentUser.getID())
+            member_db.removeNode(cur);
         cur = cur->next;
     }
 }
 
 
-void likePost(Post& p, Member &m, Database &db) {
+void likePost(Post &p, Member &m, Database &db) {
     bool modeStatus = db.getModeStatus();
     std::string s;
     Node<std::string> *cur = p.getLikeList().begin();
     while (cur != nullptr) {
-        if (cur->content()==m.getID()) {
+        if (cur->content() == m.getID()) {
             std::cout << "You already Liked it!" << std::endl;
             return;
         }
