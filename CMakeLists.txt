@@ -4,7 +4,7 @@ project(ASSN2)
 set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
-
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=leak")
 add_executable(ASSN2
         main.cpp
         database.cpp

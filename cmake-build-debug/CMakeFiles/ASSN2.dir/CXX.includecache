@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/database.cpp
+/home/parallels/CLionProjects/CSED232-ASSN2/database.cpp
 iostream
 -
 headers/database.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/database.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/database.h
 string
 -
 iostream
@@ -20,23 +20,23 @@ iostream
 fstream
 -
 member.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/member.h
 post.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/post.h
 list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/list.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/list.h
 iostream
 -
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/member.h
 iostream
 -
 list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/list.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/menu.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/menu.h
 string
 -
 string
@@ -48,9 +48,9 @@ iostream
 utility
 -
 database.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/database.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/post.h
 ctime
 -
 utility
@@ -58,37 +58,21 @@ utility
 fstream
 -
 member.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/member.h
 list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/list.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/list.cpp
-iostream
--
-headers/list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
-headers/member.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
-
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/main.cpp
+/home/parallels/CLionProjects/CSED232-ASSN2/main.cpp
 iostream
 -
 fstream
 -
 headers/menu.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/menu.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/menu.h
 headers/database.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/database.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp
-headers/member.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
-headers/list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
-iostream
--
-
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/menu.cpp
+/home/parallels/CLionProjects/CSED232-ASSN2/menu.cpp
 string
 -
 fstream
@@ -96,15 +80,15 @@ fstream
 iostream
 -
 headers/list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/list.h
 headers/menu.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/menu.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/menu.h
 headers/database.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/database.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp
+/home/parallels/CLionProjects/CSED232-ASSN2/post.cpp
 headers/post.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/post.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/post.h
 headers/database.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
+/home/parallels/CLionProjects/CSED232-ASSN2/headers/database.h
 

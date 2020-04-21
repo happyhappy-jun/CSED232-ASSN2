@@ -207,7 +207,7 @@ void writeCommentWrapper(Database &db) {
 void removeAccountWrapper(Database &db) {
     std::cout << "[-]Deleting Account..." << std::endl;
     db.deletePost();
-    db.deleteFriendList();
+    db.;
 }
 
 void loadCommandWrapper(Database &db) {

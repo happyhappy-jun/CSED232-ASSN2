@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/database.cpp" "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/database.cpp.o"
-  "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/list.cpp" "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/list.cpp.o"
-  "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/main.cpp" "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/main.cpp.o"
-  "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp" "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/member.cpp.o"
-  "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/menu.cpp" "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/menu.cpp.o"
-  "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/post.cpp" "/Users/unajun/Documents/Sophomore/CSED232/ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/post.cpp.o"
+  "/home/parallels/CLionProjects/CSED232-ASSN2/database.cpp" "/home/parallels/CLionProjects/CSED232-ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/database.cpp.o"
+  "/home/parallels/CLionProjects/CSED232-ASSN2/list.cpp" "/home/parallels/CLionProjects/CSED232-ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/list.cpp.o"
+  "/home/parallels/CLionProjects/CSED232-ASSN2/main.cpp" "/home/parallels/CLionProjects/CSED232-ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/main.cpp.o"
+  "/home/parallels/CLionProjects/CSED232-ASSN2/member.cpp" "/home/parallels/CLionProjects/CSED232-ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/member.cpp.o"
+  "/home/parallels/CLionProjects/CSED232-ASSN2/menu.cpp" "/home/parallels/CLionProjects/CSED232-ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/menu.cpp.o"
+  "/home/parallels/CLionProjects/CSED232-ASSN2/post.cpp" "/home/parallels/CLionProjects/CSED232-ASSN2/cmake-build-debug/CMakeFiles/ASSN2.dir/post.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

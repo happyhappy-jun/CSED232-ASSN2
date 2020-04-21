@@ -131,12 +131,12 @@ public:
     }
 
     void deleteList() {
-        Node<T> *cur = head;
         Node<T> *n;
-        while (cur != nullptr) {
-            n = cur->next;
-            delete cur;
-            cur = n;
+        while (head != nullptr) {
+            n = head;
+            head = head ->next;
+            delete n;
+
         }
         head = nullptr;
     }
