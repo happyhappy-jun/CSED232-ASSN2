@@ -23,8 +23,6 @@ public:
     Database() = default;
 
     ~Database() {
-        member_db.deleteList();
-        post_db.deleteList();
     };
     bool getStatus(){
         return status;
@@ -139,6 +137,7 @@ public:
         Node<Member> *temp1 = member_db.begin();
         while (temp1!=nullptr){
             temp1->content().deleteFriendlist();
+            temp1 = temp1->next;
         }
         member_db.deleteList();
         Node<Post> *temp2 = post_db.begin();
@@ -146,6 +145,7 @@ public:
             temp2->content().deletePostContent();
             temp2 = temp2->next;
         }
+        post_db.deleteList();
     }
 };
 

@@ -62,14 +62,6 @@ member.h
 list.h
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
 
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/list.cpp
-iostream
--
-headers/list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
-headers/member.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
-
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/main.cpp
 iostream
 -
@@ -79,14 +71,6 @@ headers/menu.h
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/menu.h
 headers/database.h
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/database.h
-
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/member.cpp
-headers/member.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/member.h
-headers/list.h
-/Users/unajun/Documents/Sophomore/CSED232/ASSN2/headers/list.h
-iostream
--
 
 /Users/unajun/Documents/Sophomore/CSED232/ASSN2/menu.cpp
 string
