@@ -1,11 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include "headers/menu.h"
 #include "headers/database.h"
 
 
 int main() {
-
-//Defind menu tree with custom stack
     menu mainMenu("Main");
     menu signUp = mainMenu.subMenu("Sign up", 1);
     menu signIn = mainMenu.subMenu("Sign in", 2);
@@ -26,55 +25,30 @@ int main() {
 
     Database mainDatabase;
     menuStack directory;
-    //init tree by pushing root node
     directory.push(&mainMenu);
-    int item=-2;
-    //if tree popped all directory stop operation
+    int item;
     while (!directory.isEmpty()) {
-        //current location
         menu *current = directory.top();
-        //if command mode running and ifstream reached eof end command mode
-        if (mainDatabase.getModeStatus() && mainDatabase.filebuf.eof())
+        if(mainDatabase.getModeStatus() && mainDatabase.filebuf.eof())
             finishCommandMode(mainDatabase);
         std::cout << "==================================" << std::endl;
         std::cout << "          **  " << current->getName() << "  **  " << std::endl;
         std::cout << "==================================" << std::endl;
-        if (mainDatabase.currentStatus() && current->getmenuID() == 2) mainDatabase.printUser();
-
-        //print submenu
+        if (current->getmenuID() == 2 && mainDatabase.currentStatus()) mainDatabase.printUser();
         for (int idx = 0; idx < 4; idx++) {
             std::cout << idx + 1 << ". " << current->getChild(idx)->getName() << std::endl;
         }
 
         std::string input;
+
         std::cout << "\n* Select Menu: ";
         std::getline(mainDatabase.getModeStatus() ? mainDatabase.filebuf : std::cin, input);
-
-        //log input
-        if (!mainDatabase.getModeStatus())
-            mainDatabase.addLog(input);
-        //try-catch stoi for potential invalid input;
-        try {
-            item = std::stoi(input);
-        } catch (std::invalid_argument &e) {
-            std::cout << "Invalid" << std::endl;
-            continue;
-        }
-
-        //if integer format if invalid
-        if (!(item == -1 || (item <= 4 && item >= 1))) {
-            std::cout << "Invalid" << std::endl;
-            continue;
-        }
-
-        if (item == -1) {
-            std::cout << "Returning previous menu" << std::endl;
-            directory.pop();
-            continue;
-        }
-
-        //pass to function handler
-        function_handler(mainDatabase, directory, current->getChild(item - 1));
+        mainDatabase.addLog(input);
+        std::cout <<input <<std::endl;
+        item = std::stoi(input);
+        if(!(item>=1 && item <=4)) continue;
+        if (item == -1) directory.pop();
+        else function_handler(mainDatabase, directory, current->getChild(item - 1));
         std::cout << std::endl;
     }
 }

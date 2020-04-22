@@ -9,4 +9,4 @@ add_executable(ASSN2
         main.cpp
         database.cpp
         menu.cpp
-        headers/menu.h headers/post.h post.cpp member.cpp headers/member.h headers/list.h list.cpp)
+        post.cpp member.cpp list.cpp  headers/menu.h headers/post.h  headers/member.h headers/list.h )

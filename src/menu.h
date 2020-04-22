@@ -1,20 +1,3 @@
-/*
- __   __  _______  __    _  _______  ______      _______  _______  ______   _______
-|  | |  ||       ||  |  | ||       ||    _ |    |       ||       ||      | |       |
-|  |_|  ||   _   ||   |_| ||   _   ||   | ||    |       ||   _   ||  _    ||    ___|
-|       ||  | |  ||       ||  | |  ||   |_||_   |       ||  | |  || | |   ||   |___
-|       ||  |_|  ||  _    ||  |_|  ||    __  |  |      _||  |_|  || |_|   ||    ___|
-|   _   ||       || | |   ||       ||   |  | |  |     |_ |       ||       ||   |___
-|__| |__||_______||_|  |__||_______||___|  |_|  |_______||_______||______| |_______|
-
-
-+==================================================================================+
-|                                                                                  |
-|       I completed this programming task without the improper help of others.     |
-|                                                                                  |
-+==================================================================================+
- */
-
 #ifndef MENU_H    // To make sure you don't declare the function more than once by including the header multiple times.
 #define MENU_H
 
@@ -139,5 +122,4 @@ void loadCommandWrapper(Database &db);
 void finishCommandMode(Database &db);
 
 void exitProgram(Database &db);
-bool isStringNumber(const std::string& s);
 #endif

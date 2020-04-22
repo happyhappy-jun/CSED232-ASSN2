@@ -7,7 +7,7 @@
 #include <iostream>
 
 Member create_member(const std::string &ID, const std::string &name, const std::string &birthday,
-                     const std::size_t &password) {
+                     const std::string &password) {
     return Member(ID, name, birthday, password);
 }
 
@@ -42,4 +42,5 @@ Member Member::searchID(List<Member> member_db, const std::string& ID) {
         if (temp->content().getID() == ID) return temp->content();
         temp = temp->next;
     }
+    return temp->content();
 }

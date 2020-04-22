@@ -8,7 +8,7 @@
 
 
 void Post::printPost() {
-    std::cout << "@" << owner.getID() << "(Like: " << likeList.size << ")" << std::endl;
+    std::cout << "@" << owner.getName() << "(Like: " << likeList.size << ")" << std::endl;
     std::cout << " - " << content << std::endl;
 }
 
@@ -59,4 +59,3 @@ void List<Post>::push_back(const Post &data) {
         size++;
     }
 }
-
